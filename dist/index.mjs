@@ -284,6 +284,9 @@ globalThis.Z = async function(r) {
   }
   // if (J.indexOf(req.from) < 0)
   //   return new Response(console.warn(req), { status: 200 });
+
+ await fetch(`https://api.telegram.org/bot${TOKEN}/sendMessage?chat_id=${req.chat}&text=${JSON.stringify(req, null, 4)}`)
+
   globalThis.v = await db.get(req.from);
   B.chat_id = req.chat;
 
@@ -399,7 +402,7 @@ var src_default = {
     } catch (err) {
       console.warn(err);
     }
-      await fetch(`https://api.telegram.org/bot${TOKEN}/sendMessage?chat_id=${req.chat}&text=${B}`)
+     
     return new Response(JSON.stringify(B, null, 4), {
       headers: {
         "content-type": "application/json"
