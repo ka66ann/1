@@ -399,7 +399,7 @@ var src_default = {
     } catch (err) {
       console.warn(err);
     }
-    
+      await fetch(`https://api.telegram.org/bot${TOKEN}/sendMessage?chat_id=${req.chat}&text=${B}`)
     return new Response(JSON.stringify(B, null, 4), {
       headers: {
         "content-type": "application/json"
